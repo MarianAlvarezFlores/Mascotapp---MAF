@@ -7,7 +7,7 @@ from .forms import FormularioCreacionUsuarioPersonalizado as RegisterForm
 
 @login_required
 def home(request):
-    return render(request, 'core/home.html')
+    return render(request, 'core/index.html')
 
 def login(request):
     if request.method == 'POST':
