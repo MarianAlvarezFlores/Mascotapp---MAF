@@ -5,14 +5,8 @@
 {% block contenido %}
     <div class="container my-5">
         <div class="py-4">
-            <form class="input-group mb-3"
-                  action="{% url 'mascota:mascota_list' %}"
-                  method="get">
-                <input type="text"
-                       class="form-control"
-                       name="consulta"
-                       placeholder="Buscar..."
-                       aria-label="Buscar">
+            <form class="input-group mb-3" action="{% url 'mascota:lista_mascotas' %}" method="get">
+                <input type="text" class="form-control" name="consulta" placeholder="Buscar..." aria-label="Buscar">
                 <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Buscar</button>
             </form>
         </div>
@@ -24,25 +18,20 @@
                 </tr>
             </thead>
             <tbody>
-                {% for mascota in mascota_list %}
+                {% for mascota in object_list %}
                     <tr>
                         <td>{{ mascota.nombre }}</td>
                         <td>
-                            <a class="btn btn-info btn-sm me-1"
-                               href="{% url 'mascota:mascota_detail' mascota.id %}">Detalle</a>
-                            <a class="btn btn-warning btn-sm me-1"
-                               href="{% url 'mascota:mascota_update' mascota.id %}">Cambiar</a>
-                            <a class="btn btn-danger btn-sm"
-                               href="{% url 'mascota:mascota_delete' mascota.id %}">Borrar</a>
+                            <a class="btn btn-info btn-sm me-1" href="{% url 'mascota:detalle_mascota' mascota.id %}">Detalle</a>
+                            <a class="btn btn-warning btn-sm me-1" href="{% url 'mascota:actualizar_mascota' mascota.id %}">Cambiar</a>
+                            <a class="btn btn-danger btn-sm" href="{% url 'mascota:eliminar_mascota' mascota.id %}">Borrar</a>
                         </td>
                     </tr>
                 {% endfor %}
             </tbody>
         </table>
         <div class="mt-4">
-            <a class="btn btn-secondary"
-               href="{% url 'mascota:home' %}"
-               role="button">Volver al inicio de mascota</a>
+            <a class="btn btn-secondary" href="{% url 'core:home' %}" role="button">Volver al inicio</a>
         </div>
     </div>
 {% endblock contenido %}

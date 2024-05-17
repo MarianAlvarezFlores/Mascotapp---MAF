@@ -8,10 +8,10 @@ from .forms import MascotaForm
 def home(request):
     return render(request, 'mascota/home.html')
 
-class MascotaList(ListView):
-    model = Mascota
+class MascotaList(ListView): 
+    model = Mascota 
+    template_name = 'mascota/mascota_list.html' 
     context_object_name = 'mascotas'
-    template_name = 'mascota/lista_mascotas.html'
 
 class MascotaDetail(DetailView):
     model = Mascota
