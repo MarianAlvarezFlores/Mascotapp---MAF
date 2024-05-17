@@ -1,3 +1,7 @@
 from django.shortcuts import render
+from .models import Usuario
 
-# Create your views here.
+def home(request):
+    usuarios = Usuario.objects.all()
+    context = {"usuarios": usuarios}
+    return render(request, "usuario/index.html", context)
