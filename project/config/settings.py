@@ -89,8 +89,9 @@ USE_L10N = True
 USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
-STATIC_URL = '/static/'
-STATICFILES_DIRS = [BASE_DIR / 'static']
+#STATICFILES_DIRS = [BASE_DIR / 'static']
+
+STATIC_URL = "static/"
 
 # Media files (uploads)
 MEDIA_URL = '/media/'
