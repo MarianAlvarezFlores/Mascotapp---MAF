@@ -1,13 +1,13 @@
 {% extends 'core/base.html' %}
 {% load static %}
 {% block titulo %}
-    {% include 'core/components/titulo1.html' with titulo="App Coder" %}
+    {% include 'core/components/titulo1.html' with titulo="Mascotapp" %}
 {% endblock titulo %}
 {% block contenido %}
 
     {% if user.is_authenticated %}
         {{ mensaje }}
-        <p class="fs-2">Bienvenido {{ user.username }}</p>
+        <p class="fs-2">Bienvenido/a {{ user.username }}</p>
     {% endif %}
     <!-- Heading Row-->
     <div class="row gx-4 gx-lg-5 align-items-center my-5">
@@ -19,7 +19,7 @@
         <div class="col-lg-5">
             <h1 class="font-weight-light">La Caja de la Pandora</h1>
             <p>
-                La Caja de Pandora: Desbloquea tu creatividad con nuestra plataforma web. Encuentra inspiración, comparte ideas y colabora en proyectos. ¡Libera todo tu potencial creativo en un solo lugar!
+                ¿Estpas con ganas de adoptar una mascota? Sabemos que puede ser un proceso largo y difícil, estuvimos ahí. Por eso creamos Mascotapp para ayudarte a encontrar a tu compañerito/a de una forma sencilla, sin trabas y con mucha responsabilidad.
             </p>
             <a class="btn btn-primary"
                href="https://wa.me/542619999999"
