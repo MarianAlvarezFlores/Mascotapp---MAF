@@ -6,8 +6,8 @@ from .forms import AdopcionForm
 
 class AdopcionList(ListView):
     model = Adopcion
-    template_name = 'adopcion/adopcion_list.html'
-    context_object_name = 'adopcion_list'
+    template_name = 'adopcion/lista_adopciones.html'  
+    context_object_name = 'adopciones' 
 
 class AdopcionDetail(DetailView):
     model = Adopcion
