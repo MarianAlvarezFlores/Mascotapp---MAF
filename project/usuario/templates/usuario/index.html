@@ -1,7 +1,7 @@
 {% extends 'core/base.html' %}
 
 {% block titulo %}
-    Usuarios
+    Usuarios/as
 {% endblock titulo %}
 
 {% block contenido %}
@@ -12,10 +12,10 @@
                     <div class="card-body">
                         <h2 class="card-title">{{ usuario.username }}</h2>
                         <p class="card-text">Email: {{ usuario.email }}</p>
-                        {% if usuario.first_name or usuario.last_name %}
-                            <p class="card-text">Nombre: {{ usuario.first_name }} {{ usuario.last_name }}</p>
+                        {% if usuario.nombre or usuario.apellido %}
+                            <p class="card-text">Nombre: {{ usuario.nombre}} {{ usuario.apellido }}</p>
                         {% else %}
-                            <p class="card-text">No registra nombre ni apellido.</p>
+                            <p class="card-text">¡Ups! No registramos ese nombre ni apellido.</p>
                         {% endif %}
                     </div>
                 </div>

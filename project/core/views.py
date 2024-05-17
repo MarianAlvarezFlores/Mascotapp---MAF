@@ -34,3 +34,6 @@ def register(request):
     else:
         form = RegisterForm()
     return render(request, 'core/register.html', {'form': form})
+
+def sobre_mi(request):
+    return render(request, 'core/sobre_mi.html')
