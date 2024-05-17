@@ -1,39 +1,38 @@
 from django.shortcuts import render, redirect, get_object_or_404
+from django.views.generic import CreateView, DetailView, UpdateView, DeleteView, ListView
+from django.urls import reverse_lazy
+from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Mascota
 from .forms import MascotaForm
 
-def lista_mascotas(request):
-    mascotas = Mascota.objects.all()
-    return render(request, 'mascota/lista_mascotas.html', {'mascotas': mascotas})
+def home(request):
+    return render(request, 'mascota/home.html')
 
-def detalle_mascota(request, mascota_id):
-    mascota = get_object_or_404(Mascota, pk=mascota_id)
-    return render(request, 'mascota/detalle_mascota.html', {'mascota': mascota})
+class MascotaList(ListView):
+    model = Mascota
+    context_object_name = 'mascotas'
+    template_name = 'mascota/lista_mascotas.html'
 
-def crear_mascota(request):
-    if request.method == 'POST':
-        form = MascotaForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('lista_mascotas')
-    else:
-        form = MascotaForm()
-    return render(request, 'mascota/crear_mascota.html', {'form': form})
+class MascotaDetail(DetailView):
+    model = Mascota
+    context_object_name = 'mascota'
+    template_name = 'mascota/detalle_mascota.html'
 
-def actualizar_mascota(request, mascota_id):
-    mascota = get_object_or_404(Mascota, pk=mascota_id)
-    if request.method == 'POST':
-        form = MascotaForm(request.POST, instance=mascota)
-        if form.is_valid():
-            form.save()
-            return redirect('detalle_mascota', mascota_id=mascota_id)
-    else:
-        form = MascotaForm(instance=mascota)
-    return render(request, 'mascota/actualizar_mascota.html', {'form': form})
+class MascotaCreate(CreateView):
+    model = Mascota
+    form_class = MascotaForm
+    template_name = 'mascota/crear_mascota.html'
+    success_url = reverse_lazy('lista_mascotas')
 
-def eliminar_mascota(request, mascota_id):
-    mascota = get_object_or_404(Mascota, pk=mascota_id)
-    if request.method == 'POST':
-        mascota.delete()
-        return redirect('lista_mascotas')
-    return render(request, 'mascota/confirmar_eliminacion.html', {'mascota': mascota})
+class MascotaUpdate(UpdateView):
+    model = Mascota
+    form_class = MascotaForm
+    template_name = 'mascota/actualizar_mascota.html'
+
+    def get_success_url(self):
+        return reverse_lazy('detalle_mascota', kwargs={'mascota_id': self.get_object().pk})
+
+class MascotaDelete(LoginRequiredMixin, DeleteView):
+    model = Mascota
+    template_name = 'mascota/confirmar_eliminacion.html'
+    success_url = reverse_lazy('lista_mascotas')

@@ -1,23 +1,35 @@
 from django.db import models
+from django.utils import timezone
+
+
+class MascotaCategoria(models.Model):
+    nombre = models.CharField(max_length=200, unique=True)
+    descripcion = models.CharField(max_length=250, null=True, blank=True, verbose_name="descripción")
+
+    def __str__(self) -> str:
+        return self.nombre
+
+    class Meta:
+        verbose_name = "categoría de mascotas"
+        verbose_name_plural = "categorías de mascotas"
+
 
 class Mascota(models.Model):
-    ESPECIE_CHOICES = [
-        ('perro', 'Perro'),
-        ('gato', 'Gato'),
-    ]
-    TAMANO_CHOICES = [
-        ('chico', 'Chico'),
-        ('mediano', 'Mediano'),
-        ('grande', 'Grande'),
-    ]
+    categoria_id = models.ForeignKey(
+        MascotaCategoria, null=True, blank=True, on_delete=models.SET_NULL, verbose_name="categoría de mascota"
+    )
     nombre = models.CharField(max_length=100)
-    especie = models.CharField(max_length=5, choices=ESPECIE_CHOICES)
-    tamano = models.CharField(max_length=8, choices=TAMANO_CHOICES)
+    especie = models.CharField(max_length=100)
+    tamano = models.CharField(max_length=100)
     edad = models.IntegerField()
-    descripcion = models.TextField()
-    foto = models.ImageField(upload_to='mascotas/', blank=True, null=True)
-    fecha_agregada = models.DateField(auto_now_add=True)
-    adoptada = models.BooleanField(default=False)
+    descripcion = models.TextField(null=True, blank=True, verbose_name="descripción")
+    fecha_actualizacion = models.DateField(
+        null=True, blank=True, default=timezone.now, editable=False, verbose_name="fecha de actualización"
+    )
 
-    def __str__(self):
+    def __str__(self) -> str:
         return self.nombre
+
+    class Meta:
+        verbose_name = "mascota"
+        verbose_name_plural = "mascotas"
