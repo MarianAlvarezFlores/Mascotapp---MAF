@@ -5,7 +5,6 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from .forms import FormularioCreacionUsuarioPersonalizado as RegisterForm
 
-@login_required
 def home(request):
     return render(request, 'core/index.html')
 
