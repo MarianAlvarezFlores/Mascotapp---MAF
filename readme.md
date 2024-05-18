@@ -15,6 +15,14 @@ Mascotas: Proporciona información detallada sobre las mascotas disponibles para
 
 Adopción: Facilita el proceso de adopción de mascotas, permitiendo a los usuarios solicitar la adopción de una mascota y realizar el seguimiento del proceso.
 
+## Instalacion
+
+0. `python -m venv ./.venv`
+1. `./Scripts/activate`
+2. `python -m pip install django`
+3. `python manage.py migrate`
+4. `python manage.py runserver`
+
 # Mejoras a futuro
 
 Integración con redes sociales para compartir perfiles de mascotas y promover la adopción.
