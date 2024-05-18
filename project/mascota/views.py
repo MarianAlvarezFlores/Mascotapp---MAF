@@ -8,6 +8,12 @@ from .forms import MascotaForm
 def home(request):
     return render(request, 'mascota/home.html')
 
+class MascotaCreate(CreateView):
+    model = Mascota
+    form_class = MascotaForm
+    template_name = 'mascota/mascota_create.html'
+    success_url = reverse_lazy('lista_mascotas')
+
 class MascotaList(ListView): 
     model = Mascota 
     template_name = 'mascota/mascota_list.html' 
@@ -18,21 +24,14 @@ class MascotaDetail(DetailView):
     context_object_name = 'mascota'
     template_name = 'mascota/detalle_mascota.html'
 
-class MascotaCreate(CreateView):
-    model = Mascota
-    form_class = MascotaForm
-    template_name = 'mascota/crear_mascota.html'
-    success_url = reverse_lazy('lista_mascotas')
-
 class MascotaUpdate(UpdateView):
     model = Mascota
-    form_class = MascotaForm
+    form_class    = MascotaForm
     template_name = 'mascota/actualizar_mascota.html'
-
-    def get_success_url(self):
-        return reverse_lazy('detalle_mascota', kwargs={'mascota_id': self.get_object().pk})
+    def get_success_url (self):
+        return reverse_lazy('mascota:detalle_mascota', kwargs={'pk': self.get_object().pk})
 
 class MascotaDelete(LoginRequiredMixin, DeleteView):
     model = Mascota
-    template_name = 'mascota/confirmar_eliminacion.html'
-    success_url = reverse_lazy('lista_mascotas')
+    template_name = 'mascota/mascota_confirm_delete.html'
+    success_url = reverse_lazy('mascota:lista_mascotas')

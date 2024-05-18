@@ -8,6 +8,6 @@ class AdopcionForm(forms.ModelForm):
 
         widgets = {
             'mascota': forms.Select(attrs={'class': 'form-control'}),
-            'adoptante': forms.TextInput(attrs={'class': 'form-control'}),
+            'adoptante': forms.Select(attrs={'class': 'form-control'}),
             'fecha_adopcion': forms.DateInput(attrs={'class': 'form-control', 'type': 'date'}),
         }

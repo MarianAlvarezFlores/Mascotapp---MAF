@@ -16,15 +16,16 @@ class MascotaCategoria(models.Model):
 
 class Mascota(models.Model):
     categoria_id = models.ForeignKey(
-        MascotaCategoria, null=True, blank=True, on_delete=models.SET_NULL, verbose_name="categoría de mascota"
+        MascotaCategoria, null = True, blank = True, on_delete = models.SET_NULL, verbose_name = "categoría de mascota"
     )
-    nombre = models.CharField(max_length=100)
-    especie = models.CharField(max_length=100)
-    tamano = models.CharField(max_length=100)
-    edad = models.IntegerField()
-    descripcion = models.TextField(null=True, blank=True, verbose_name="descripción")
+    adoptada            = models.BooleanField(default=False)
+    nombre              = models.CharField(max_length=100)
+    especie             = models.CharField(max_length=100)
+    tamano              = models.CharField(max_length=100)
+    edad                = models.IntegerField()
+    descripcion         = models.TextField(null=True, blank=True, verbose_name="descripción")
     fecha_actualizacion = models.DateField(
-        null=True, blank=True, default=timezone.now, editable=False, verbose_name="fecha de actualización"
+        null = True, blank = True, default = timezone.now, editable = False, verbose_name = "fecha de actualización"
     )
 
     def __str__(self) -> str:

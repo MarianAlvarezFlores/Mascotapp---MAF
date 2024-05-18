@@ -7,7 +7,7 @@
     {% else %}
         Crear
     {% endif %}
-    Productos
+    Mascotas
 {% endblock titulo %}
 
 {% block contenido %}
@@ -20,7 +20,7 @@
         <button type="submit" class="btn btn-primary">Guardar</button>
     </form>
     <div class="fs-3 pb-4">
-        <a href="{% url 'producto:home' %}">Volver al inicio de Adopción</a>
+        <a href="{% url 'mascota:home' %}">Volver al inicio de Adopción</a>
     </div>
 
 {% endblock contenido %}
