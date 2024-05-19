@@ -18,6 +18,7 @@ def login(request):
             return redirect('core:home')
         else:
             messages.error(request, 'Nombre de usuario o contraseña incorrectos.')
+            return render(request, 'core/login.html', {'messages': messages})
     return render(request, 'core/login.html')
 
 def register(request):

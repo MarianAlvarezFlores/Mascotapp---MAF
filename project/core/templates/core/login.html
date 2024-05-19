@@ -16,6 +16,10 @@
         <input type="hidden" name="next" value="{% url 'core:home' %}">
 
         <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+        {% if messages %}
+            <p class="text-danger ">{{messages.messages.error}}</p>
+        {% endif %}
+
         <a href="{% url 'core:home' %}" class="btn btn-secondary">Cancelar</a>
     </form>
 

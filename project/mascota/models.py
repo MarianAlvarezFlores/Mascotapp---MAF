@@ -13,7 +13,6 @@ class MascotaCategoria(models.Model):
         verbose_name = "categoría de mascotas"
         verbose_name_plural = "categorías de mascotas"
 
-
 class Mascota(models.Model):
     categoria_id = models.ForeignKey(
         MascotaCategoria, null = True, blank = True, on_delete = models.SET_NULL, verbose_name = "categoría de mascota"
