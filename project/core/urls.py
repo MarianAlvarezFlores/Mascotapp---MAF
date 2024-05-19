@@ -12,6 +12,4 @@ urlpatterns = [
     path("register/", views.register, name="register"),
     path('sobre-mi/', views.sobre_mi, name='sobre_mi'),
 ]
-
-
 urlpatterns += staticfiles_urlpatterns()

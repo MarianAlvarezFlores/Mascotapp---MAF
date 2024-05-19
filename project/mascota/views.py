@@ -34,4 +34,4 @@ class MascotaUpdate(UpdateView):
 class MascotaDelete(LoginRequiredMixin, DeleteView):
     model = Mascota
     template_name = 'mascota/mascota_confirm_delete.html'
-    success_url = reverse_lazy('mascota:lista_mascotas')
+    success_url = reverse_lazy('mascota:mascota_list')

@@ -5,7 +5,7 @@ Mascotas: lista de mascotas
 {% block contenido %}
 <section class="container my-5">
     <section class="py-4">
-        <form class="input-group mb-3" action="{% url 'mascota:lista_mascotas' %}" method="get">
+        <form class="input-group mb-3" action="{% url 'mascota:mascota_list' %}" method="get">
             <input type="text" class="form-control" name="consulta" placeholder="Buscar..." aria-label="Buscar">
             <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Buscar</button>
         </form>
@@ -30,7 +30,7 @@ Mascotas: lista de mascotas
                         href="{% url 'mascota:detalle_mascota' mascota.id %}">Detalle</a>
                     <a class="btn btn-warning btn-sm me-1"
                         href="{% url 'mascota:actualizar_mascota' mascota.id %}">Cambiar</a>
-                    <a class="btn btn-danger btn-sm" href="{% url 'mascota:eliminar_mascota' mascota.id %}">Borrar</a>
+                    <a class="btn btn-danger btn-sm" href="{% url 'mascota:mascota_confirm_delete' mascota.id %}">Borrar</a>
                 </td>
             </tr>
             {% endfor %}
