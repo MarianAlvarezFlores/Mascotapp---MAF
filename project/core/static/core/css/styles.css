@@ -10824,3 +10824,12 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+
+nav .container img {
+  max-height: 5rem;
+}
+
+
+.not-celeste-horrible{
+  background-color: rebeccapurple!important;
+}
