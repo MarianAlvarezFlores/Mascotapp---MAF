@@ -11,9 +11,9 @@ Mascotapp es una plataforma diseñada para facilitar el proceso de adopción de 
 
 Usuarios: Permite a los usuarios registrarse, iniciar sesión y gestionar su perfil.
 
-Mascotas: Proporciona información detallada sobre las mascotas disponibles para adopción, incluyendo fotos, descripciones y requisitos de adopción.
+Mascotas: Proporciona información detallada sobre las mascotas disponibles para adopción, descripciones y requisitos de adopción.
 
-Adopción: Facilita el proceso de adopción de mascotas, permitiendo a los usuarios solicitar la adopción de una mascota y realizar el seguimiento del proceso.
+Adopción: Facilita el proceso de adopción de mascotas, permitiendo a los usuarios solicitar la adopción de una mascota.
 
 ## Instalacion
 
@@ -28,4 +28,3 @@ Adopción: Facilita el proceso de adopción de mascotas, permitiendo a los usuar
 Integración con redes sociales para compartir perfiles de mascotas y promover la adopción.
 
 Sistema de mensajería interna para facilitar la comunicación entre usuarios y administradores.
-
