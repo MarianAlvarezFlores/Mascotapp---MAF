@@ -6,7 +6,7 @@ from .models import Mascota
 from .forms import MascotaForm
 
 def home(request):
-    return render(request, 'mascota/home.html')
+    return render(request, 'mascota/mascota_list.html')
 
 class MascotaCreate(CreateView):
     model = Mascota
