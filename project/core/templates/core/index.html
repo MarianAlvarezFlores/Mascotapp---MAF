@@ -1,7 +1,7 @@
 {% extends 'core/base.html' %}
 {% load static %}
 {% block titulo %}
-{% include 'core/components/titulo1.html' with titulo="Mascotapp" %}
+{% include 'core/components/titulo1.html' with titulo="Tu peludito a unos clicks de distancia" %}
 {% endblock titulo %}
 {% block contenido %}
 
@@ -21,7 +21,7 @@
                         <img src="{% static 'core/img/caja.webp' %}" class="d-block w-100" alt="...">
                       </div>
                       <div class="carousel-item">
-                        <img src="{% static 'core/img/caja2.webp' %}" class="d-block w-100" alt="...">
+                        <img src="{% static 'core/img/caja2.webp.jpeg' %}" class="d-block w-100" alt="...">
                       </div>
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
@@ -34,20 +34,14 @@
                     </button>
                   </div>
         </div>
-        <div class="col-lg-5">
-            <h1 class="font-weight-light">¿Querés adoptar una mascota?</h1>
-            <p>
-                Sabemos que puede ser un proceso largo y difícil, estuvimos ahí. Por eso creamos Mascotapp para ayudarte a encontrar a tu compañerito/a de una forma sencilla, sin trabas y con mucha responsabilidad.
-            </p>
+        <div class="col-lg-5 d-flex align-items-center">
+            <div style="text-align: justify; width: 100%;">
+                <h1 class="font-weight-light">¿Querés adoptar una mascota?</h1>
+                <br>
+                <p>
+                    Sabemos que puede ser un proceso largo y difícil, estuvimos ahí. Por eso creamos Mascotapp para ayudarte a encontrar a tu compañerito/a de una forma sencilla, sin trabas y con mucha responsabilidad.
+                </p>
+            </div>
         </div>
-    </div>
-    <!-- Call to Action-->
-    <div class="card text-white bg-secondary my-5 py-4 text-center">
-        <div class="card-body">
-            <p class="text-white m-0">
-               Tu peludito a unos clicks de distancia
-            </p>
-        </div>
-    </div>
     <!-- Content Row-->
 {% endblock contenido %}

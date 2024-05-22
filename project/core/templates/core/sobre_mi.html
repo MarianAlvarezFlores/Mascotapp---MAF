@@ -1,15 +1,40 @@
 {% extends 'core/base.html' %}
+{% load static %}
+
 {% block titulo %}
     Sobre mi
 {% endblock titulo %}
 {% block contenido %}
-   
-    <p>¡Hola a todos! Soy Mariana Álvarez Flores, ¡pero pueden llamarme Marian!
-    
-        Como periodista cada día es una aventura nueva. Cuando no estoy haciendo auditoría de medios
-    (monita auditora, como suelo describir el trabajo) o brindando asesoría en comunicación, 
-    me transformo en una apasionada bailarina, compartiendo risas y coreografías con mis amigas. 
-    En mi vida, los perros ocupan un lugar muy especial. Y fue la experiencia de adoptar a mi perrita Miga (sí, como los sanguchitos)
-     lo que me impulsó a crear este proyecto. Creo firmemente en el poder del trabajo en equipo y en mantener siempre una sonrisa
-     ¡Porque con buena actitud todo puede ser más divertido! 🌟</p>
+    <div class="row">
+        <div class="col-lg-6">
+            <div id="carouselExample" class="carousel slide">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="{% static 'core/img/yo.jpeg' %}" class="d-block w-100" alt="Caja 1">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'core/img/miga.jpeg' %}" class="d-block w-100" alt="Caja 2">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+        <div class="col-lg-6 d-flex align-items-center">
+            <div style="text-align: justify;">
+                <p>¡Hola a todos! Soy Mariana Álvarez Flores, ¡pero pueden llamarme Marian!</p>
+                <p>Como periodista cada día es una aventura nueva. Cuando no estoy haciendo auditoría de medios
+                    (monita auditora, como suelo describir el trabajo) o brindando asesoría en comunicación, 
+                    me transformo en una apasionada bailarina, compartiendo risas y coreografías con mis amigas. 
+                    En mi vida, los perros ocupan un lugar muy especial. Y fue la experiencia de adoptar a mi perrita Miga (sí, como los sanguchitos)
+                    lo que me impulsó a crear este proyecto. Creo firmemente en el poder del trabajo en equipo y en mantener siempre una sonrisa
+                    ¡Porque con buena actitud todo puede ser más divertido! 🌟
+        </div>
+    </div>
 {% endblock contenido %}

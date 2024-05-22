@@ -1,4 +1,6 @@
 {% extends 'core/base.html' %}
+{% load static %}
+
 {% block titulo %}
 Mascotas: lista de mascotas
 {% endblock titulo %}
@@ -11,33 +13,27 @@ Mascotas: lista de mascotas
         </form>
     </section>
 
-    {%if not object_list%}
+    {% if not object_list %}
         <p>No tenemos mascotas en adopción actualmente! 🥳</p>
-    {%else%}
-    <table class="table table-hover">
-        <thead>
-            <tr>
-                <th scope="col">Mascota</th>
-                <th scope="col">Acciones</th>
-            </tr>
-        </thead>
-        <tbody>
+    {% else %}
+        <div class="row">
             {% for mascota in object_list %}
-            <tr>
-                <td>{{ mascota.nombre }}</td>
-                <td>
-                    <a class="btn btn-info btn-sm me-1"
-                        href="{% url 'mascota:detalle_mascota' mascota.id %}">Detalle</a>
-                    <a class="btn btn-warning btn-sm me-1"
-                        href="{% url 'mascota:actualizar_mascota' mascota.id %}">Cambiar</a>
-                    <a class="btn btn-danger btn-sm" href="{% url 'mascota:mascota_confirm_delete' mascota.id %}">Borrar</a>
-                </td>
-            </tr>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">{{ mascota.nombre }}</h5>
+                            <p class="card-text">{{ mascota.descripcion|truncatewords:20 }}</p>
+                            <div class="mt-auto">
+                                <a href="{% url 'mascota:detalle_mascota' mascota.id %}" class="btn btn-info btn-sm me-1">Detalle</a>
+                                <a href="{% url 'mascota:actualizar_mascota' mascota.id %}" class="btn btn-warning btn-sm me-1">Cambiar</a>
+                                <a href="{% url 'mascota:mascota_confirm_delete' mascota.id %}" class="btn btn-danger btn-sm">Borrar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             {% endfor %}
-        </tbody>
-    </table>
-
-    {%endif%}
+        </div>
+    {% endif %}
 
     <section class="mt-4">
         <a class="btn btn-secondary" href="{% url 'core:home' %}" role="button">Volver al inicio</a>
