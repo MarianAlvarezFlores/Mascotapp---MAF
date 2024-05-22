@@ -51,14 +51,8 @@
             </div>
         </nav>
         <!-- Page Content-->
-        <div class="container px-4 px-lg-5">
-            <div class="row align-items-center my-5">
-                <h1 class="pb-lg-3 text-white bg-info px-3 py-2 rounded">
-                    {% block titulo %}
-                     <img src="{% static "logo.webp.png" %}">
-                    {% endblock titulo %}
-                </h1>
-            </div>
+        <div class="container px-4 px-lg-5 mt-4">
+
             {% block contenido %}
             {% endblock contenido %}
         </div>
