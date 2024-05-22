@@ -6,6 +6,10 @@ Mariana Álvarez Flores Comisión: 54135
 
 Mascotapp es una plataforma diseñada para facilitar el proceso de adopción de mascotas, centrándose principalmente en perros y gatos. Proporciona una interfaz intuitiva y amigable para que los usuarios puedan buscar, adoptar y gestionar la adopción de sus nuevas mascotas.
 
+# Video de presentación
+
+
+
 # Aplicaciones
 
 Usuarios: Permite a los usuarios registrarse, iniciar sesión y gestionar su perfil.

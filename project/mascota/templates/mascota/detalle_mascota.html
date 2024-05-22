@@ -14,9 +14,8 @@
     </dl>
 
     <section class="fs-3 pb-4">
-
-        <a href="{% url 'adopcion:adopcion_create' %}">Adoptar a {{object.nombre}}</a>
-        <a href="{% url 'mascota:mascota_list' %}">Volver</a>
+        <a href="{% url 'adopcion:adopcion_create' %}" class="btn btn-primary">Adoptar a {{ object.nombre }}</a>
+        <a href="{% url 'mascota:mascota_list' %}" class="btn btn-secondary">Volver</a>
     </section>
-
+    
 {% endblock contenido %}
