@@ -8,7 +8,9 @@ Mascotapp es una plataforma diseñada para facilitar el proceso de adopción de 
 
 # Video de presentación
 
+En el video se me pasó mencionaerlo pero utilizando el usuario admin / pass: 123 verán que los pedidos de adopciones se listarán para su vista.
 
+https://youtu.be/QySdKI8ouFI 
 
 # Aplicaciones
 
