@@ -5,17 +5,17 @@ Mariana Álvarez Flores Comisión: 54135
 # Acerca del proyecto
 
 Mascotapp es una plataforma diseñada para facilitar el proceso de adopción de mascotas, centrándose principalmente en perros y gatos. Proporciona una interfaz intuitiva y amigable para que los usuarios puedan buscar, adoptar y gestionar la adopción de sus nuevas mascotas.
+La aplicación web implementa operaciones de CRUD.
 
 # Video de presentación
 
-En el video se me pasó mencionaerlo pero utilizando el usuario admin / pass: 123 verán que los pedidos de adopciones se listarán para su vista.
-Super user creado. admin / pass: 123
+En el video se me pasó mencionaerlo pero utilizando el usuario admin / pass: 123 verán que los pedidos de adopciones se listarán para su vista. Super user creado. admin / pass: 123
 
-https://youtu.be/QySdKI8ouFI 
+https://youtu.be/QySdKI8ouFI
 
 # Aplicaciones
 
-Usuarios: Permite a los usuarios registrarse, iniciar sesión y gestionar su perfil.
+Usuarios: Permite a los usuarios registrarse, iniciar sesión, adoptar o sumar una mascota.
 
 Mascotas: Proporciona información detallada sobre las mascotas disponibles para adopción, descripciones y requisitos de adopción.
 
@@ -23,7 +23,7 @@ Adopción: Facilita el proceso de adopción de mascotas, permitiendo a los usuar
 
 # Instalación
 
-En VSC: 
+En VSC:
 
 1. python -m venv ./.venv
 2. ./Scripts/activate
@@ -43,6 +43,6 @@ En VSC:
 
 5. App 'Mi mascota' donde cargar la libreta sanitaria y envío automático de recordatorios de vacunas próximas a vencer, desparasitaciones, etc.
 
-6. Integración con redes sociales para compartir perfiles de mascotas y promover la adopción.
+6. Sistema de mensajería interna para facilitar la comunicación entre usuarios y administradores.
 
-7. Sistema de mensajería interna para facilitar la comunicación entre usuarios y administradores.
+7. Integración con redes sociales para compartir perfiles de mascotas y promover la adopción.
